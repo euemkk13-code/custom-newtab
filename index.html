@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -22,6 +22,7 @@
     font-family: "Segoe UI", sans-serif;
     color: white;
     backdrop-filter: brightness(1);
+    position: relative; /* necessário pro relógio absoluto funcionar */
   }
 
   .overlay {
@@ -36,11 +37,15 @@
     text-align: center;
   }
 
+  /* relógio no canto superior direito */
   .clock {
+    position: absolute;
+    top: 30px;
+    right: 50px;
     font-size: 4em;
     font-weight: 300;
-    margin-bottom: 30px;
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 2;
   }
 
   .search-box {
@@ -83,8 +88,9 @@
 </head>
 <body>
   <div class="overlay"></div>
+  <div class="clock" id="clock"></div>
+
   <div class="content">
-    <div class="clock" id="clock"></div>
     <form class="search-box" action="https://duckduckgo.com/" method="get">
       <input type="text" name="q" placeholder="Search with DuckDuckGo...">
       <button type="submit">🔍</button>
