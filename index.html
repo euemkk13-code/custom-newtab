@@ -22,7 +22,7 @@
     font-family: "Segoe UI", sans-serif;
     color: white;
     backdrop-filter: brightness(1);
-    position: relative; /* necessário pro relógio absoluto funcionar */
+    position: relative;
   }
 
   .overlay {
@@ -35,9 +35,9 @@
   .content {
     z-index: 1;
     text-align: center;
+    margin-top: 50px; /* 👈 adiciona espaço de 50px pra baixo */
   }
 
-  /* relógio no canto superior direito */
   .clock {
     position: absolute;
     top: 30px;
